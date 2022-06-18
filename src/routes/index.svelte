@@ -17,9 +17,10 @@
     import PopularMovies from '../components/PopularMovies.svelte'
     export let popular;
     import global from '../global.css';
+    import {fly} from 'svelte/transition';
 </script>
 
-<section>
+<section in:fly={{y:50,duration:500,delay:500}} out:fly={{duration:500}}>
     <SearchMovies/>
     <PopularMovies {popular}/>
 </section>
